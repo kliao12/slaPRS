@@ -2,7 +2,7 @@
 Here is the repository for our method for constructing polygenic risk scores in admixed individuals: stacking local ancestry PRS (slaPRS). See https://zenodo.org/record/7987848#.ZHZS0C1h30o for link to download example plink files (too large to host on github)
 
 ## Installation Instructions
-devtools::install_github('kliao12/slaPRS')
+devtools::install_github('kliao12/slaPRS') <br>
 library(bigsnpr) #method uses bigsnpr package to handle genotype/phenotype data and perform C+T in R <br>
 library(data.table) <br>
 library(caret); library(glmnet) #method uses native R packages for elastic net fitting <br>
