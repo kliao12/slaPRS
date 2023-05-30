@@ -1,5 +1,5 @@
 # slaPRS
-Here is the repository for our method for constructing polygenic risk scores in admixed individuals: stacking local ancestry PRS (slaPRS).
+Here is the repository for our method for constructing polygenic risk scores in admixed individuals: stacking local ancestry PRS (slaPRS). See https://zenodo.org/record/7987848#.ZHZS0C1h30o for link to download example plink files (too large to host on github)
 
 ## Installation Instructions
 devtools::install_github('kliao12/slaPRS')
@@ -8,7 +8,7 @@ devtools::install_github('kliao12/slaPRS')
 library(slaPRS)
 
 ### 1) Import example plink files containing genotype and phenotype (in fam file) information using bigsnpr package
-bigSNP_file <- load_plinkFile("./inst/extdata/example_plink_files.bed") #Use this is importing plink file 
+bigSNP_file <- load_plinkFile("./path/to/example_plink_files.bed") #Use this is importing plink file 
 
 str(bigSNP_file) #Look at inputted format
 
