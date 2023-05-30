@@ -27,8 +27,8 @@ pop1_stats <- all_sumstats[,c(2,3,4,5,6,7)] <br>
 pop2_stats <- all_sumstats[,c(2,3,4,5,8,9)]
 
 ### 3) Keep only sites in common between genotype and summary statistics
-N <- length(bigSNP_file$fam$sample.ID)
-used.bigSNP <- snp_attach(snp_subset(bigSNP_file, ind.row = rows_along(bigSNP_file$fam), ind.col = which(orig_POS %in% all_sumstats$POS)))
+N <- length(bigSNP_file$fam$sample.ID) <br>
+used.bigSNP <- snp_attach(snp_subset(bigSNP_file, ind.row = rows_along(bigSNP_file$fam), ind.col = which(orig_POS %in% all_sumstats$POS))) <br>
 G <- used.bigSNP$genotypes; CHR <- used.bigSNP$map$chromosome; POS <- used.bigSNP$map$physical.pos
 
 ### 2) Match alleles between summary statistics and plink/rds file. Note not actually needed b/c simulations ensured matched alleles but used to illustrate
@@ -37,7 +37,7 @@ matched_betas_pvals <- match_stats(used.bigSNP, pop1_stats, pop2_stats)
 ### 3) Get local ancestry in each window across chromosomes. Note this can take a few minutes
 all_la <- slaPRS::example_la
 
-start <- POS[1]; end <- POS[length(POS)]
+start <- POS[1]; end <- POS[length(POS)] <br>
 local_la_df <- get_la_example(all_la, 5000000) #Right now have to run this by hand, github won't load. Maybe need to run document() first
 
 ### 4) Split into training and testing samples 
@@ -50,9 +50,9 @@ stacked_PRS <- run_slaPRS(used.bigSNP, matched_betas_pvals, local_la_df, full_mo
 CT_PRS_list <- run_CT(used.bigSNP, matched_betas_pvals, rsquared = 0.10, ind.train, ind.test)
 
 ### 7) Compute correlation for both
-test_y <- as.numeric(bigSNP.obj$fam$affection)[ind.test]
-stacked_cor <- cor.test(stacked_PRS, test_y)$estimate
+test_y <- as.numeric(bigSNP.obj$fam$affection)[ind.test] <br>
+stacked_cor <- cor.test(stacked_PRS, test_y)$estimate <br>
 pop1_cor <- cor.test(CT_PRS_list$pop1_CT, test_y)$estimate; pop2_cor <- cor.test(CT_PRS_list$pop2_CT, test_y)$estimate
 
-print(paste0("cor(stacked PRS, y) = ", stacked_cor))
+print(paste0("cor(stacked PRS, y) = ", stacked_cor)) <br>
 print(paste0("cor(pop1 C+T PRS, y) = ", pop1_cor)); print(paste0("cor(pop2 C+T PRS, y) = ", pop2_cor))
