@@ -15,7 +15,7 @@ bigSNP_file <- load_plinkFile("./path/to/example_plink_files.bed") #Use this is 
 
 str(bigSNP_file) #Look at inputted format
 
-#Get alias for commonly used objects
+#Get alias for commonly used objects <br>
 G   <- bigSNP_file$genotypes; CHR <- bigSNP_file$map$chromosome <br>
 orig_POS <- bigSNP_file$map$physical.pos; 
 
