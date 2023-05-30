@@ -46,7 +46,7 @@ stacked_PRS <- run_slaPRS(used.bigSNP, matched_betas_pvals, local_la_df, full_mo
 ### 6) Compare to C+T in testing samples 
 CT_PRS_list <- run_CT(used.bigSNP, matched_betas_pvals, rsquared = 0.10, ind.train, ind.test)
 
-# 7) Compute correlation for both
+### 7) Compute correlation for both
 test_y <- as.numeric(bigSNP.obj$fam$affection)[ind.test]
 stacked_cor <- cor.test(stacked_PRS, test_y)$estimate
 pop1_cor <- cor.test(CT_PRS_list$pop1_CT, test_y)$estimate; pop2_cor <- cor.test(CT_PRS_list$pop2_CT, test_y)$estimate
