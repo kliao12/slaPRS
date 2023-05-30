@@ -23,7 +23,7 @@ orig_POS <- bigSNP_file$map$physical.pos;
 ### Note: example_sumstats provided has both populations in one file so need to separate
 all_sumstats <- slaPRS::example_sumstats
 
-pop1_stats <- all_sumstats[,c(2,3,4,5,6,7)]
+pop1_stats <- all_sumstats[,c(2,3,4,5,6,7)] <br>
 pop2_stats <- all_sumstats[,c(2,3,4,5,8,9)]
 
 ### 3) Keep only sites in common between genotype and summary statistics
