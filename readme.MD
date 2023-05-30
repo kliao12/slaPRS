@@ -16,7 +16,7 @@ bigSNP_file <- load_plinkFile("./path/to/example_plink_files.bed") #Use this is 
 str(bigSNP_file) #Look at inputted format
 
 #Get alias for commonly used objects
-G   <- bigSNP_file$genotypes; CHR <- bigSNP_file$map$chromosome
+G   <- bigSNP_file$genotypes; CHR <- bigSNP_file$map$chromosome <br>
 orig_POS <- bigSNP_file$map$physical.pos; 
 
 ### 2) Import summary statistics for each population with columns: chr, pos, a0, a1, beta, p val
