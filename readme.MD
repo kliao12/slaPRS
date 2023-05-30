@@ -3,8 +3,8 @@ Here is the repository for our method for constructing polygenic risk scores in 
 
 ## Installation Instructions
 devtools::install_github('kliao12/slaPRS')
-library(bigsnpr) #method uses bigsnpr package to handle genotype/phenotype data and perform C+T in R
-library(data.table)
+library(bigsnpr) #method uses bigsnpr package to handle genotype/phenotype data and perform C+T in R \\
+library(data.table) \\
 library(caret); library(glmnet) #method uses native R packages for elastic net fitting
 
 ## Example workflow
